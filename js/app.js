@@ -1,6 +1,19 @@
 console.log("hay");
 $(document).ready(function () {
+  //Start back to top
+  $(".btn-backtotops").hide();
+  $(window).scroll(function () {
+    let getscrolltop = $(this).scrollTop();
+
+    if (getscrolltop >= 370) {
+      $(".btn-backtotops").fadeIn(1000);
+    } else {
+      $(".btn-backtotops").fadeOut(1000);
+    }
+  });
+  //End back to top
   // Start Header
+
   //for bugger()
   $(".navbuttons").click(function () {
     $(".navbuttons").toggleClass("crossxs");
@@ -55,4 +68,9 @@ $(document).ready(function () {
     }
   });
   // End Adv
+  //Start Footer section
+  const getyear = $("#getyear");
+  const getfullyear = new Date().getUTCFullYear();
+  getyear.text(getfullyear);
+  //End Footer section
 });
